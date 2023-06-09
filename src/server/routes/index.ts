@@ -7,6 +7,10 @@ router.get("/", (req: Request, res: Response) => {
   res.json({ message: "hello world" });
 });
 
-router.post("/cities", CitiesController.create);
+router.post(
+  "/cities",
+  CitiesController.createValidation,
+  CitiesController.create
+);
 
 export { router };
